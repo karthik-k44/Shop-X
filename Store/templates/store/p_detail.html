@@ -1,0 +1,40 @@
+{% extends 'store/base2.html' %}
+{% load static %}
+
+{% block title %}
+Ecommerce Online Shopping
+{% endblock title %}
+
+{% block content %}
+<div class="container-fluid">
+    {% for product in data %}
+        <div class="card mb-3">
+            <div class="row g-0">
+                <div class="col-md-4">
+                    <img src="{{ product.product_image.url }}" class="card-img-top" alt="{{ product.name }}" height="500px" width="400">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h3 class="card-title text-primary">{{ product.name }}</h3>
+                        <p class="card-text"><strong>Category:</strong> {{ product.category }}</p>
+                        <p class="card-text"><strong>Quantity:</strong> {{ product.quantity }}</p>
+                        <p class="card-text"><strong>Original Price:</strong> {{ product.original_price }}</p>
+                        <p class="card-text"><strong>Selling Price:</strong> {{ product.selling_price }}</p>
+                        <p class="card-text"><strong>Description:</strong> {{ product.description }}</p>
+                        
+                        <div class="row">
+                            <div class="col-md-6">
+                                <button class="btn btn-primary btn-add-to-cart">Add to Cart</button>
+                            </div>
+                            <div class="col-md-6">
+                                <button class="btn btn-success btn-buy-now">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock content %}
+

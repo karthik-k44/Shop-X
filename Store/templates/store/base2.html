@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>
+       {% block title %}
+       {% endblock title%} 
+    </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+      body {
+          background-color: #111; /* Set the background color to a dark shade */
+          color: #fff; /* Set the text color to white */
+      }
+
+      .navbar {
+          background-color: #222; /* Set the navbar background color to a darker shade */
+      }
+
+      .navbar-brand, .navbar-nav .nav-link {
+          color: #fff; /* Set the navbar text color to white */
+      }
+
+      .card {
+          background-color: #222; /* Set the card background color to a darker shade */
+          color: #fff; /* Set the card text color to white */
+      }
+
+      .card-header {
+          background-color: #333; /* Set the card header background color to a darker shade */
+      }
+
+      .btn-primary {
+          background-color: #fff; /* Set the button background color to white */
+          color: #000; /* Set the button text color to black */
+      }
+      a {
+        text-decoration: none;
+        color: #fff; /* Set the text color for the links */
+    }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">X-Shoppie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              </li>
+           
+              <li class="nav-item">
+                <a class="nav-link active" href="{% url 'reg' %}">Register</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Collections</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <br><br>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/1.jpg' %}" class="d-block w-100" alt="..." height="500px" width="600px">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/9.gif' %}" class="d-block w-100" alt="..." height="500px" width="600px">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/5.jpg' %}" class="d-block w-100" alt="..." height="500px" width="600px">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+    {% block content %}
+    {% endblock content %}
+
+    <div class="card ">
+      <h5 class="card-header">Featured</h5>
+      <div class="card-body">
+        <h5 class="card-title">Special title treatment</h5>
+        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+      </div>
+    </div>
+  </body>
+</html>
