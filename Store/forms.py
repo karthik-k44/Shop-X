@@ -17,3 +17,6 @@ class LoginForm(forms.Form):
     username = forms.CharField(widget=forms.TextInput(attrs={"class":"form_control","placeholder":"Enter your username"}))
     password = forms.CharField(widget=forms.PasswordInput(attrs={"class":"form_control","placeholder":"Enter yout password"}))
     
+class OrderForm(forms.Form):
+    address=forms.CharField(widget=forms.Textarea(attrs={"class":"form-control","placeholder":"address","rows":5}))
+    

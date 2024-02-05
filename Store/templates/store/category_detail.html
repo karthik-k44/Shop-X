@@ -7,19 +7,20 @@ Ecommerce Online Shopping
 
 {% block content %}
 <div class="container">
+  <br>
   <center><h3>{{name.name}}</h3></center>
     <div class="row">
         {% for i in data %}
         
             <div class="col-md-3 mb-3 mt-4 ms-4 me-4">
-                <div class="card" style="width: 20rem; height: 480px;">
+                <div class="card" style="width: 20rem; height: 400px;">
                   <a href="{% url 'details' i.id %}">
-                    <img src="{{i.product_image.url}}" class="card-img-top" alt="" height="300px">
+                    <img src="{{i.product_image.url}}" class="card-img-top" alt="" height="250px" width="300px">
                     <div class="card-body">
                         <h5 class="card-text text-center">{{i.name}}</h5>
                       </a>
-                        <p class="card-text text-center"><br>Original price : <s>{{i.original_price}}/-</s><br>
-                            Offer Price : {{i.selling_price}}/-</p>
+                        <nav class="card-text text-center"><br>Original price : <s style="color: red;">{{i.original_price}}/-</s><br>
+                            Offer Price : <nav class="pp" style="color: yellow;"><h5><b>{{i.selling_price }}/-</b></h5></nav></nav>
                     </div>
                 </div>
             </div>
